@@ -24,18 +24,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="40V-hk-NDM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="393" y="745"/>
+            <point key="canvasLocation" x="37" y="952"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Side Bar Table View Controller-->
         <scene sceneID="OLD-2X-hhM">
             <objects>
-                <tableViewController id="lHf-nU-uki" sceneMemberID="viewController">
+                <tableViewController id="lHf-nU-uki" customClass="SideBarTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="PJ9-L3-I1e">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Tsd-nR-VbZ">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="sideBarOptionCell" id="Tsd-nR-VbZ">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Tsd-nR-VbZ" id="fML-Yp-0dA">
@@ -49,10 +49,89 @@
                             <outlet property="delegate" destination="lHf-nU-uki" id="D8m-l6-hi1"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="L79-aO-HoM" kind="custom" identifier="shopSegue" customClass="SWRevealViewControllerSegue" id="xsS-if-Li8"/>
+                        <segue destination="KCl-Cj-wYh" kind="custom" identifier="myCartSegue" customClass="SWRevealViewControllerSegue" id="AxD-UL-UWD"/>
+                        <segue destination="Qvr-8Y-VrE" kind="custom" identifier="previousOrdersSegue" customClass="SWRevealViewControllerSegue" id="6h1-QK-esJ"/>
+                        <segue destination="kvx-2E-pQQ" kind="custom" identifier="couponsSegue" customClass="SWRevealViewControllerSegue" id="1HE-Ro-kQV"/>
+                        <segue destination="S8F-lV-GPs" kind="custom" identifier="profileSegue" customClass="SWRevealViewControllerSegue" id="tmc-HN-Rpp"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0s0-Ql-Nad" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="889" y="1153"/>
+            <point key="canvasLocation" x="541" y="1668"/>
+        </scene>
+        <!--My Cart View Controller-->
+        <scene sceneID="s6X-PK-Zwe">
+            <objects>
+                <viewController id="KCl-Cj-wYh" customClass="MyCartViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="q6N-yY-ydm"/>
+                        <viewControllerLayoutGuide type="bottom" id="7In-0d-Z9q"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="N2n-Jo-W2b">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VRT-up-nvR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1435" y="312"/>
+        </scene>
+        <!--Previous Orders View Controller-->
+        <scene sceneID="1Ot-ib-Usd">
+            <objects>
+                <viewController id="Qvr-8Y-VrE" customClass="PreviousOrdersViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CUm-DI-CoZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="2Ad-dY-rIQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dpk-t1-hKm">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XQH-nI-eLh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1430" y="988"/>
+        </scene>
+        <!--Coupons View Controller-->
+        <scene sceneID="9nd-Yk-Uja">
+            <objects>
+                <viewController id="kvx-2E-pQQ" customClass="CouponsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Cz3-Mw-ujI"/>
+                        <viewControllerLayoutGuide type="bottom" id="uan-rP-EXq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DZ6-X9-8fX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z9a-Lc-nla" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1430" y="1668"/>
+        </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="mei-nz-HjN">
+            <objects>
+                <viewController id="S8F-lV-GPs" customClass="ProfileViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1dp-2G-UZA"/>
+                        <viewControllerLayoutGuide type="bottom" id="cVE-mH-6dz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IFc-W2-XLX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vis-sN-Kwh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1430" y="2360"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Sl2-Hp-x8X">
@@ -67,7 +146,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="89k-6q-IYt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="889" y="409"/>
+            <point key="canvasLocation" x="533" y="312"/>
         </scene>
         <!--Shop View Controller-->
         <scene sceneID="3iT-fS-kbU">
@@ -80,13 +159,59 @@
                     <view key="view" contentMode="scaleToFill" id="cpW-VW-9u9">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Slb-Ji-5di">
+                                <rect key="frame" x="0.0" y="504" width="320" height="49"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <items>
+                                    <tabBarItem title="Stores Nearby" id="BgX-C3-GUs"/>
+                                    <tabBarItem title="Guess My Order" id="EoU-fe-D0Z"/>
+                                </items>
+                                <connections>
+                                    <outlet property="delegate" destination="L79-aO-HoM" id="Ztq-Ir-NAg"/>
+                                </connections>
+                            </tabBar>
+                            <containerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N1H-FU-k5y" customClass="UITableView">
+                                <rect key="frame" x="20" y="88" width="280" height="392"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="PTh-Kb-OC4" kind="embed" id="8Yj-c0-rEa"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="D19-zz-Uny"/>
+                    <connections>
+                        <outlet property="containerView" destination="N1H-FU-k5y" id="WMa-wd-ZPi"/>
+                        <outlet property="storesNearbyView" destination="N1H-FU-k5y" id="s5I-RV-IqS"/>
+                        <outlet property="tabBar" destination="Slb-Ji-5di" id="Nhe-xW-Mkp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iIO-KW-D8o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1423" y="409"/>
+            <point key="canvasLocation" x="1435" y="-367"/>
+        </scene>
+        <!--Stores Nearby Table View Controller-->
+        <scene sceneID="Ccx-rx-GSa">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="PTh-Kb-OC4" customClass="StoresNearbyTableViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hL5-cC-lpc"/>
+                        <viewControllerLayoutGuide type="bottom" id="T5f-Z3-53I"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="2Vh-Vj-Ynz">
+                        <rect key="frame" x="0.0" y="0.0" width="280" height="392"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TrP-sM-PxR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1896" y="-279"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -94,4 +219,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="xsS-if-Li8"/>
+    </inferredMetricsTieBreakers>
 </document>
