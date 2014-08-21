@@ -120,10 +120,10 @@
 			children = (
 				57A7A95B19A59E4C00437F4C /* SWRevealViewController */,
 				57A7A95F19A59EEF00437F4C /* CustomViewController */,
+				57A7A96319A59FD900437F4C /* Shop */,
 				57A7A92C19A59C9600437F4C /* AppDelegate.h */,
 				57A7A92D19A59C9600437F4C /* AppDelegate.m */,
 				57A7A93819A59C9600437F4C /* Main.storyboard */,
-				57A7A96319A59FD900437F4C /* Shop */,
 				57A7A93B19A59C9600437F4C /* Images.xcassets */,
 				57A7A92419A59C9600437F4C /* Supporting Files */,
 			);

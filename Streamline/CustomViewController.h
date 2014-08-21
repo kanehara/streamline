@@ -10,6 +10,6 @@
 
 @interface CustomViewController : UIViewController
 
-@property (nonatomic, strong) UIBarButtonItem *sideBarButton;
+@property (nonatomic, retain) UIBarButtonItem *sideBarButton;
 
 @end
