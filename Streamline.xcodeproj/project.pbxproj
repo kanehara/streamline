@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		573C8EF919A6B242002B4D52 /* GuessMyOrderTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 573C8EF819A6B242002B4D52 /* GuessMyOrderTableViewController.m */; };
 		57A7A91E19A59C9500437F4C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57A7A91D19A59C9500437F4C /* Foundation.framework */; };
 		57A7A92019A59C9500437F4C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57A7A91F19A59C9500437F4C /* CoreGraphics.framework */; };
 		57A7A92219A59C9500437F4C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57A7A92119A59C9500437F4C /* UIKit.framework */; };
@@ -42,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		573C8EF719A6B242002B4D52 /* GuessMyOrderTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GuessMyOrderTableViewController.h; path = Shop/GuessMyOrderTableViewController.h; sourceTree = "<group>"; };
+		573C8EF819A6B242002B4D52 /* GuessMyOrderTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GuessMyOrderTableViewController.m; path = Shop/GuessMyOrderTableViewController.m; sourceTree = "<group>"; };
 		57A7A91A19A59C9500437F4C /* Streamline.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Streamline.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57A7A91D19A59C9500437F4C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		57A7A91F19A59C9500437F4C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -207,6 +210,8 @@
 				57A7A96519A59FF400437F4C /* ShopViewController.m */,
 				57A7A97B19A5B82E00437F4C /* StoresNearbyTableViewController.h */,
 				57A7A97C19A5B82E00437F4C /* StoresNearbyTableViewController.m */,
+				573C8EF719A6B242002B4D52 /* GuessMyOrderTableViewController.h */,
+				573C8EF819A6B242002B4D52 /* GuessMyOrderTableViewController.m */,
 			);
 			name = Shop;
 			sourceTree = "<group>";
@@ -353,6 +358,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				573C8EF919A6B242002B4D52 /* GuessMyOrderTableViewController.m in Sources */,
 				57A7A92E19A59C9600437F4C /* AppDelegate.m in Sources */,
 				57A7A92A19A59C9600437F4C /* main.m in Sources */,
 				57A7A96D19A5AEF600437F4C /* MyCartViewController.m in Sources */,
