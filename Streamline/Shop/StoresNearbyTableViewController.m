@@ -62,4 +62,10 @@
     return cell;
 }
 
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    UIViewController *destination = segue.destinationViewController;
+    NSInteger selectedRow = self.tableView.indexPathForSelectedRow.row;
+    [destination setTitle:_dummyStoreName[selectedRow]];
+}
+
 @end

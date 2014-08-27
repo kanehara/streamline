@@ -7,7 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5713662219A84501009FCE14 /* cartItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5713662119A84501009FCE14 /* cartItem.m */; };
+		5713662619A84F9E009FCE14 /* foodItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5713662519A84F9E009FCE14 /* foodItem.m */; };
+		5713662B19A86C6E009FCE14 /* AVOCADOS.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5713662A19A86C6E009FCE14 /* AVOCADOS.jpg */; };
 		573C8EF919A6B242002B4D52 /* GuessMyOrderTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 573C8EF819A6B242002B4D52 /* GuessMyOrderTableViewController.m */; };
+		573C8EFC19A6CDA5002B4D52 /* foodCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 573C8EFB19A6CDA5002B4D52 /* foodCategoryViewController.m */; };
+		573C8EFF19A6E0C1002B4D52 /* FoodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 573C8EFE19A6E0C1002B4D52 /* FoodViewController.m */; };
+		573C8F0219A6E663002B4D52 /* FoodDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 573C8F0119A6E663002B4D52 /* FoodDetailViewController.m */; };
+		573E24B119A7BD010026B7D2 /* myCarts.m in Sources */ = {isa = PBXBuildFile; fileRef = 573E24B019A7BD010026B7D2 /* myCarts.m */; };
 		57A7A91E19A59C9500437F4C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57A7A91D19A59C9500437F4C /* Foundation.framework */; };
 		57A7A92019A59C9500437F4C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57A7A91F19A59C9500437F4C /* CoreGraphics.framework */; };
 		57A7A92219A59C9500437F4C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57A7A92119A59C9500437F4C /* UIKit.framework */; };
@@ -30,6 +37,7 @@
 		57A7A97519A5AF7A00437F4C /* CouponsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A7A97419A5AF7A00437F4C /* CouponsViewController.m */; };
 		57A7A97819A5AF8700437F4C /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A7A97719A5AF8700437F4C /* ProfileViewController.m */; };
 		57A7A97D19A5B82E00437F4C /* StoresNearbyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A7A97C19A5B82E00437F4C /* StoresNearbyTableViewController.m */; };
+		57BECF9219A92492001BCA94 /* StoreCartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57BECF9119A92492001BCA94 /* StoreCartViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,8 +51,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5713662019A84501009FCE14 /* cartItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cartItem.h; path = cartItem/cartItem.h; sourceTree = "<group>"; };
+		5713662119A84501009FCE14 /* cartItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = cartItem.m; path = cartItem/cartItem.m; sourceTree = "<group>"; };
+		5713662419A84F9E009FCE14 /* foodItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = foodItem.h; sourceTree = "<group>"; };
+		5713662519A84F9E009FCE14 /* foodItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = foodItem.m; sourceTree = "<group>"; };
+		5713662A19A86C6E009FCE14 /* AVOCADOS.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = AVOCADOS.jpg; sourceTree = "<group>"; };
 		573C8EF719A6B242002B4D52 /* GuessMyOrderTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GuessMyOrderTableViewController.h; path = Shop/GuessMyOrderTableViewController.h; sourceTree = "<group>"; };
 		573C8EF819A6B242002B4D52 /* GuessMyOrderTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GuessMyOrderTableViewController.m; path = Shop/GuessMyOrderTableViewController.m; sourceTree = "<group>"; };
+		573C8EFA19A6CDA5002B4D52 /* foodCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = foodCategoryViewController.h; path = Shop/foodCategoryViewController.h; sourceTree = "<group>"; };
+		573C8EFB19A6CDA5002B4D52 /* foodCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = foodCategoryViewController.m; path = Shop/foodCategoryViewController.m; sourceTree = "<group>"; };
+		573C8EFD19A6E0C1002B4D52 /* FoodViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FoodViewController.h; path = Shop/FoodViewController.h; sourceTree = "<group>"; };
+		573C8EFE19A6E0C1002B4D52 /* FoodViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FoodViewController.m; path = Shop/FoodViewController.m; sourceTree = "<group>"; };
+		573C8F0019A6E663002B4D52 /* FoodDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FoodDetailViewController.h; path = Shop/FoodDetailViewController.h; sourceTree = "<group>"; };
+		573C8F0119A6E663002B4D52 /* FoodDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FoodDetailViewController.m; path = Shop/FoodDetailViewController.m; sourceTree = "<group>"; };
+		573E24AF19A7BD010026B7D2 /* myCarts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myCarts.h; sourceTree = "<group>"; };
+		573E24B019A7BD010026B7D2 /* myCarts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myCarts.m; sourceTree = "<group>"; };
 		57A7A91A19A59C9500437F4C /* Streamline.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Streamline.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57A7A91D19A59C9500437F4C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		57A7A91F19A59C9500437F4C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -80,6 +101,8 @@
 		57A7A97719A5AF8700437F4C /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProfileViewController.m; path = Profile/ProfileViewController.m; sourceTree = "<group>"; };
 		57A7A97B19A5B82E00437F4C /* StoresNearbyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StoresNearbyTableViewController.h; path = Shop/StoresNearbyTableViewController.h; sourceTree = "<group>"; };
 		57A7A97C19A5B82E00437F4C /* StoresNearbyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StoresNearbyTableViewController.m; path = Shop/StoresNearbyTableViewController.m; sourceTree = "<group>"; };
+		57BECF9019A92492001BCA94 /* StoreCartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StoreCartViewController.h; path = "My Cart/StoreCartViewController.h"; sourceTree = "<group>"; };
+		57BECF9119A92492001BCA94 /* StoreCartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StoreCartViewController.m; path = "My Cart/StoreCartViewController.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +129,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5713662319A84507009FCE14 /* cartItem */ = {
+			isa = PBXGroup;
+			children = (
+				5713662019A84501009FCE14 /* cartItem.h */,
+				5713662119A84501009FCE14 /* cartItem.m */,
+			);
+			name = cartItem;
+			sourceTree = "<group>";
+		};
+		5713662719A84FA5009FCE14 /* foodItem */ = {
+			isa = PBXGroup;
+			children = (
+				5713662419A84F9E009FCE14 /* foodItem.h */,
+				5713662519A84F9E009FCE14 /* foodItem.m */,
+			);
+			name = foodItem;
+			sourceTree = "<group>";
+		};
 		57A7A91119A59C9500437F4C = {
 			isa = PBXGroup;
 			children = (
@@ -139,6 +180,9 @@
 		57A7A92319A59C9600437F4C /* Streamline */ = {
 			isa = PBXGroup;
 			children = (
+				57A7A93819A59C9600437F4C /* Main.storyboard */,
+				5713662719A84FA5009FCE14 /* foodItem */,
+				5713662319A84507009FCE14 /* cartItem */,
 				57A7A95B19A59E4C00437F4C /* SWRevealViewController */,
 				57A7A95F19A59EEF00437F4C /* CustomViewController */,
 				57A7A96A19A5A7C500437F4C /* SideBarViewController */,
@@ -149,7 +193,6 @@
 				57A7A97919A5AF9000437F4C /* Profile */,
 				57A7A92C19A59C9600437F4C /* AppDelegate.h */,
 				57A7A92D19A59C9600437F4C /* AppDelegate.m */,
-				57A7A93819A59C9600437F4C /* Main.storyboard */,
 				57A7A93B19A59C9600437F4C /* Images.xcassets */,
 				57A7A92419A59C9600437F4C /* Supporting Files */,
 			);
@@ -159,6 +202,7 @@
 		57A7A92419A59C9600437F4C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5713662A19A86C6E009FCE14 /* AVOCADOS.jpg */,
 				57A7A92519A59C9600437F4C /* Streamline-Info.plist */,
 				57A7A92619A59C9600437F4C /* InfoPlist.strings */,
 				57A7A92919A59C9600437F4C /* main.m */,
@@ -212,6 +256,12 @@
 				57A7A97C19A5B82E00437F4C /* StoresNearbyTableViewController.m */,
 				573C8EF719A6B242002B4D52 /* GuessMyOrderTableViewController.h */,
 				573C8EF819A6B242002B4D52 /* GuessMyOrderTableViewController.m */,
+				573C8EFA19A6CDA5002B4D52 /* foodCategoryViewController.h */,
+				573C8EFB19A6CDA5002B4D52 /* foodCategoryViewController.m */,
+				573C8EFD19A6E0C1002B4D52 /* FoodViewController.h */,
+				573C8EFE19A6E0C1002B4D52 /* FoodViewController.m */,
+				573C8F0019A6E663002B4D52 /* FoodDetailViewController.h */,
+				573C8F0119A6E663002B4D52 /* FoodDetailViewController.m */,
 			);
 			name = Shop;
 			sourceTree = "<group>";
@@ -228,8 +278,12 @@
 		57A7A96E19A5AF0D00437F4C /* My Cart */ = {
 			isa = PBXGroup;
 			children = (
+				573E24AF19A7BD010026B7D2 /* myCarts.h */,
+				573E24B019A7BD010026B7D2 /* myCarts.m */,
 				57A7A96B19A5AEF600437F4C /* MyCartViewController.h */,
 				57A7A96C19A5AEF600437F4C /* MyCartViewController.m */,
+				57BECF9019A92492001BCA94 /* StoreCartViewController.h */,
+				57BECF9119A92492001BCA94 /* StoreCartViewController.m */,
 			);
 			name = "My Cart";
 			sourceTree = "<group>";
@@ -340,6 +394,7 @@
 				57A7A93C19A59C9600437F4C /* Images.xcassets in Resources */,
 				57A7A92819A59C9600437F4C /* InfoPlist.strings in Resources */,
 				57A7A93A19A59C9600437F4C /* Main.storyboard in Resources */,
+				5713662B19A86C6E009FCE14 /* AVOCADOS.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,16 +415,23 @@
 			files = (
 				573C8EF919A6B242002B4D52 /* GuessMyOrderTableViewController.m in Sources */,
 				57A7A92E19A59C9600437F4C /* AppDelegate.m in Sources */,
+				57BECF9219A92492001BCA94 /* StoreCartViewController.m in Sources */,
 				57A7A92A19A59C9600437F4C /* main.m in Sources */,
 				57A7A96D19A5AEF600437F4C /* MyCartViewController.m in Sources */,
 				57A7A97D19A5B82E00437F4C /* StoresNearbyTableViewController.m in Sources */,
 				57A7A95A19A59E4500437F4C /* SWRevealViewController.m in Sources */,
 				57A7A97819A5AF8700437F4C /* ProfileViewController.m in Sources */,
+				573E24B119A7BD010026B7D2 /* myCarts.m in Sources */,
+				5713662619A84F9E009FCE14 /* foodItem.m in Sources */,
 				57A7A97119A5AF3E00437F4C /* PreviousOrdersViewController.m in Sources */,
 				57A7A96619A59FF400437F4C /* ShopViewController.m in Sources */,
 				57A7A97519A5AF7A00437F4C /* CouponsViewController.m in Sources */,
+				573C8F0219A6E663002B4D52 /* FoodDetailViewController.m in Sources */,
+				5713662219A84501009FCE14 /* cartItem.m in Sources */,
 				57A7A96919A5A7BF00437F4C /* SideBarTableViewController.m in Sources */,
 				57A7A95E19A59EEA00437F4C /* CustomViewController.m in Sources */,
+				573C8EFF19A6E0C1002B4D52 /* FoodViewController.m in Sources */,
+				573C8EFC19A6CDA5002B4D52 /* foodCategoryViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

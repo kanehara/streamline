@@ -1,0 +1,38 @@
+//
+//  foodItem.m
+//  Streamline
+//
+//  Created by kanehara on 8/23/26 H.
+//  Copyright (c) 26 Heisei kanehara. All rights reserved.
+//
+
+#import "foodItem.h"
+
+@implementation foodItem
+
+@synthesize foodItemCategory = _foodItemCategory;
+@synthesize foodItemName = _foodItemName;
+@synthesize foodItemPrice = _foodItemPrice;
+@synthesize foodID = _foodID;
+
+
+- (id)initWithName:(NSString *)name withPrice:(float)price withCategory:(NSString *)category {
+    self = [super init];
+    
+    _foodItemName = name;
+    _foodItemPrice = price;
+    _foodItemCategory = category;
+    
+    return self;
+}
+
+- (BOOL) isEqual:(id)object {
+    foodItem *objectFoodItem = (foodItem*)object;
+    
+    if ([objectFoodItem.foodID isEqualToString:_foodID]) {
+        return YES;
+    }
+    return NO;
+}
+
+@end
