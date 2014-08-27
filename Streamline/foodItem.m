@@ -15,6 +15,16 @@
 @synthesize foodItemPrice = _foodItemPrice;
 @synthesize foodID = _foodID;
 
+- (id) init {
+    self = [super self];
+    if (self) {
+        _foodID = 0;
+        _foodItemPrice = 0;
+        _foodItemName = @"Nil";
+        _foodItemCategory = @"Nada";
+    }
+    return self;
+}
 
 - (id)initWithName:(NSString *)name withPrice:(float)price withCategory:(NSString *)category {
     self = [super init];

@@ -8,8 +8,13 @@
 
 #import "CustomViewController.h"
 
-@interface MyCartViewController : CustomViewController <UITableViewDataSource, UITableViewDelegate>
+@interface MyCartViewController : CustomViewController <UITableViewDataSource, UITableViewDelegate> {
+    NSString *_store;
+}
 
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
+
+@property (nonatomic, weak) IBOutlet UILabel *noCartsLabel;
+
 
 @end

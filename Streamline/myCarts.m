@@ -73,16 +73,16 @@
                 // food item is already in cart
                 cartItem *existingCartItem = (cartItem*)cart[i];
                 [existingCartItem addQuantity:newCartItem.cartItemQuantity];
-                [_storeCartDictionary setObject:existingCartItem forKey:store];
+                [_storeCartDictionary setObject:cart forKey:store];
                 return;
             }
         }
     }
     // case when item is not in cart
     cartItem *brandNewCartItem = [[cartItem alloc] initWithCartItem:newCartItem];
-    [cart addObject:brandNewCartItem];
+    NSMutableArray *newCart = [[NSMutableArray alloc] initWithObjects:brandNewCartItem, nil];
     
-    [_storeCartDictionary setObject:brandNewCartItem forKey:store];
+    [_storeCartDictionary setObject:newCart forKey:store];
     
 }
 

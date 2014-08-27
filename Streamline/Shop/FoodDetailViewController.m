@@ -17,6 +17,9 @@
 
 @implementation FoodDetailViewController
 
+@synthesize foodDetailCartItem = _foodDetailCartItem;
+@synthesize store = _store;
+
 
 - (void)viewDidLoad
 {
@@ -60,9 +63,10 @@
     
     [self setTitle:@"Avocado"];
     
-    self.foodDetailCartItem = [[cartItem alloc] initWithFoodItem:item withQuantity:quantity];
-    
-    self.store = @"Hiller's on Troy Rd";
+    _foodDetailCartItem = [[cartItem alloc] initWithFoodItem:item withQuantity:quantity];
+    [_foodDetailCartItem.cartItemFoodItem setFoodID:@"Avocado123"];
+
+    _store = @"Hiller's on Troy Rd";
 }
 
 // ------------------------------DUMMY DATA INIT END-------------------------------------------
@@ -93,11 +97,12 @@
     [self.quantityField resignFirstResponder];
     
     // set quantity variable
-    self.foodDetailCartItem.cartItemQuantity = [self.quantityField.text floatValue];
+    [self.foodDetailCartItem addQuantity: [self.quantityField.text floatValue]];
     
     float quantityFieldFloatValue = [self.quantityField.text floatValue];
     float total = quantityFieldFloatValue * [self.price.text floatValue];
     
+    // set new total cost
     [self.foodDetailCartItem setCartItemTotalCost:total];
     
     NSString *totalString = [NSString stringWithFormat:@"%.02f", total];

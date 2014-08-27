@@ -15,6 +15,8 @@
 
 @property (nonatomic) IBOutlet UITableView *tableView;
 
+@property (nonatomic) IBOutlet UILabel *totalLabel;
+
 @property (nonatomic) UIBarButtonItem *editButon;
 
 @property (nonatomic) NSString *store;

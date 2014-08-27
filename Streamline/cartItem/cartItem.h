@@ -11,7 +11,7 @@
 
 @interface cartItem : NSObject
 
-@property (nonatomic, strong, readonly) foodItem *cartItemFoodItem;
+@property (nonatomic, strong) foodItem *cartItemFoodItem;
 @property (nonatomic) float cartItemQuantity;
 @property (nonatomic) float cartItemTotalCost;
 

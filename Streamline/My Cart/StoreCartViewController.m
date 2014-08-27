@@ -8,6 +8,7 @@
 
 #import "StoreCartViewController.h"
 #import "myCarts.h"
+#import "cartItem.h"
 
 @interface StoreCartViewController ()
 
@@ -25,6 +26,10 @@
     [self initMyCartsInstance];
     
     [self initEditButton];
+    
+    [self initTotalLabel];
+    
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 }
 
 - (void)initMyCartsInstance {
@@ -38,6 +43,16 @@
     self.navigationItem.rightBarButtonItem = _editButton;
 }
 
+- (void)initTotalLabel {
+    float total = 0;
+    NSMutableArray *cart = [_myCartsInstance.storeCartDictionary objectForKey:_store];
+    for (int i = 0; i < cart.count; ++i) {
+        cartItem *item = (cartItem*)cart[i];
+        total += item.cartItemTotalCost;
+    }
+    self.totalLabel.text = [NSString stringWithFormat:@"$%.02f", total];
+}
+
 - (void)enableEditingOfTableView {
     [self.tableView setEditing:YES animated:YES];
 }
@@ -48,17 +63,38 @@
 
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     NSMutableArray *cart = [_myCartsInstance.storeCartDictionary objectForKey:_store];
-    return cart.count;
+    if (cart) {
+        return cart.count;
+    }
+    else {
+        return 0;
+    }
 }
 
 - (UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"storeCartCell" forIndexPath:indexPath];
     
     NSMutableArray *cart = [_myCartsInstance.storeCartDictionary objectForKey:_store];
+    cartItem *cartItem = cart[indexPath.row];
     
-    cell.textLabel.text = cart[indexPath.row];
+    UILabel *foodNameLabel = (UILabel*) [cell viewWithTag:1];
+    UILabel *priceLabel = (UILabel*) [cell viewWithTag:2];
+    UILabel *subtotalLabel = (UILabel*) [cell viewWithTag:3];
     
+    UITextField *quantityTextField = (UITextField*) [cell viewWithTag:4];
+    
+    foodNameLabel.text = cartItem.cartItemFoodItem.foodItemName;
+    priceLabel.text = [NSString stringWithFormat:@"$%.02f", cartItem.cartItemFoodItem.foodItemPrice];
+    subtotalLabel.text = [NSString stringWithFormat: @"Subtotal: $%.02f", cartItem.cartItemTotalCost];
+    
+    quantityTextField.text = [[NSNumber numberWithFloat:cartItem.cartItemQuantity] stringValue];
+    
+        
     return cell;
+}
+
+- (IBAction)onCheckoutButtonPress:(id)sender {
+    
 }
 
 @end

@@ -10,10 +10,10 @@
 
 @interface foodItem : NSObject
 
-@property (nonatomic, strong, readonly) NSString *foodItemName;
-@property (nonatomic, readonly) float foodItemPrice;
-@property (nonatomic, strong, readonly) NSString *foodItemCategory;
-@property (nonatomic, strong, readonly) NSString *foodID; // the unique ID of the food item
+@property (nonatomic) NSString *foodItemName;
+@property (nonatomic) float foodItemPrice;
+@property (nonatomic) NSString *foodItemCategory;
+@property (nonatomic) NSString *foodID; // the unique ID of the food item
 
 - (id)initWithName:(NSString*)name
          withPrice:(float)price

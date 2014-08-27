@@ -8,6 +8,7 @@
 
 #import "MyCartViewController.h"
 #import "myCarts.h"
+#import "StoreCartViewController.h"
 
 @interface MyCartViewController ()
 
@@ -18,6 +19,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    
+    [self.noCartsLabel setHidden:YES];
+
 }
 
 - (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView {
@@ -43,6 +49,18 @@
     cell.textLabel.text = store;
     
     return cell;
+}
+
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    _store = [[myCarts getInstance] storeAtIndex:indexPath];
+    [self performSegueWithIdentifier:@"storeSelectionSegue" sender:self];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"storeSelectionSegue"]) {
+        StoreCartViewController *dest = (StoreCartViewController*) segue.destinationViewController;
+        dest.store = _store;
+    }
 }
 
 @end
