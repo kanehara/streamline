@@ -38,6 +38,10 @@
 		57A7A97819A5AF8700437F4C /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A7A97719A5AF8700437F4C /* ProfileViewController.m */; };
 		57A7A97D19A5B82E00437F4C /* StoresNearbyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A7A97C19A5B82E00437F4C /* StoresNearbyTableViewController.m */; };
 		57BECF9219A92492001BCA94 /* StoreCartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57BECF9119A92492001BCA94 /* StoreCartViewController.m */; };
+		57E9AF7F19AFC184008C8F77 /* CartTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E9AF7E19AFC184008C8F77 /* CartTableViewCell.m */; };
+		57F0493319B1253900E0C6E2 /* ReplaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F0493219B1253900E0C6E2 /* ReplaceViewController.m */; };
+		57F0493919B1266E00E0C6E2 /* CheckoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F0493819B1266E00E0C6E2 /* CheckoutViewController.m */; };
+		57F0493C19B12AE300E0C6E2 /* PreviousOrdersDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F0493B19B12AE300E0C6E2 /* PreviousOrdersDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,8 +91,8 @@
 		57A7A95919A59E4500437F4C /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = SWRevealViewController/SWRevealViewController.m; sourceTree = "<group>"; };
 		57A7A95C19A59EEA00437F4C /* CustomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomViewController.h; path = CustomViewController/CustomViewController.h; sourceTree = "<group>"; };
 		57A7A95D19A59EEA00437F4C /* CustomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomViewController.m; path = CustomViewController/CustomViewController.m; sourceTree = "<group>"; };
-		57A7A96419A59FF400437F4C /* ShopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShopViewController.h; path = /Users/HomeKanehara/Desktop/Streamline/streamline/Streamline/Shop/ShopViewController.h; sourceTree = "<absolute>"; };
-		57A7A96519A59FF400437F4C /* ShopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShopViewController.m; path = /Users/HomeKanehara/Desktop/Streamline/streamline/Streamline/Shop/ShopViewController.m; sourceTree = "<absolute>"; };
+		57A7A96419A59FF400437F4C /* ShopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShopViewController.h; path = /Users/yoheikanehara/Personal/Streamline/Streamline/Shop/ShopViewController.h; sourceTree = "<absolute>"; };
+		57A7A96519A59FF400437F4C /* ShopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShopViewController.m; path = /Users/yoheikanehara/Personal/Streamline/Streamline/Shop/ShopViewController.m; sourceTree = "<absolute>"; };
 		57A7A96719A5A7B400437F4C /* SideBarTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SideBarTableViewController.h; path = SideBarViewController/SideBarTableViewController.h; sourceTree = "<group>"; };
 		57A7A96819A5A7BF00437F4C /* SideBarTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SideBarTableViewController.m; path = SideBarViewController/SideBarTableViewController.m; sourceTree = "<group>"; };
 		57A7A96B19A5AEF600437F4C /* MyCartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyCartViewController.h; path = "My Cart/MyCartViewController.h"; sourceTree = "<group>"; };
@@ -103,6 +107,14 @@
 		57A7A97C19A5B82E00437F4C /* StoresNearbyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StoresNearbyTableViewController.m; path = Shop/StoresNearbyTableViewController.m; sourceTree = "<group>"; };
 		57BECF9019A92492001BCA94 /* StoreCartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StoreCartViewController.h; path = "My Cart/StoreCartViewController.h"; sourceTree = "<group>"; };
 		57BECF9119A92492001BCA94 /* StoreCartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StoreCartViewController.m; path = "My Cart/StoreCartViewController.m"; sourceTree = "<group>"; };
+		57E9AF7D19AFC184008C8F77 /* CartTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CartTableViewCell.h; path = "My Cart/CartTableViewCell.h"; sourceTree = "<group>"; };
+		57E9AF7E19AFC184008C8F77 /* CartTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CartTableViewCell.m; path = "My Cart/CartTableViewCell.m"; sourceTree = "<group>"; };
+		57F0493119B1253900E0C6E2 /* ReplaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReplaceViewController.h; path = "My Cart/ReplaceViewController.h"; sourceTree = "<group>"; };
+		57F0493219B1253900E0C6E2 /* ReplaceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReplaceViewController.m; path = "My Cart/ReplaceViewController.m"; sourceTree = "<group>"; };
+		57F0493719B1266E00E0C6E2 /* CheckoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CheckoutViewController.h; path = "My Cart/CheckoutViewController.h"; sourceTree = "<group>"; };
+		57F0493819B1266E00E0C6E2 /* CheckoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CheckoutViewController.m; path = "My Cart/CheckoutViewController.m"; sourceTree = "<group>"; };
+		57F0493A19B12AE300E0C6E2 /* PreviousOrdersDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PreviousOrdersDetailViewController.h; path = "Previous Orders/PreviousOrdersDetailViewController.h"; sourceTree = "<group>"; };
+		57F0493B19B12AE300E0C6E2 /* PreviousOrdersDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PreviousOrdersDetailViewController.m; path = "Previous Orders/PreviousOrdersDetailViewController.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -284,6 +296,12 @@
 				57A7A96C19A5AEF600437F4C /* MyCartViewController.m */,
 				57BECF9019A92492001BCA94 /* StoreCartViewController.h */,
 				57BECF9119A92492001BCA94 /* StoreCartViewController.m */,
+				57E9AF7D19AFC184008C8F77 /* CartTableViewCell.h */,
+				57E9AF7E19AFC184008C8F77 /* CartTableViewCell.m */,
+				57F0493119B1253900E0C6E2 /* ReplaceViewController.h */,
+				57F0493219B1253900E0C6E2 /* ReplaceViewController.m */,
+				57F0493719B1266E00E0C6E2 /* CheckoutViewController.h */,
+				57F0493819B1266E00E0C6E2 /* CheckoutViewController.m */,
 			);
 			name = "My Cart";
 			sourceTree = "<group>";
@@ -293,6 +311,8 @@
 			children = (
 				57A7A96F19A5AF3E00437F4C /* PreviousOrdersViewController.h */,
 				57A7A97019A5AF3E00437F4C /* PreviousOrdersViewController.m */,
+				57F0493A19B12AE300E0C6E2 /* PreviousOrdersDetailViewController.h */,
+				57F0493B19B12AE300E0C6E2 /* PreviousOrdersDetailViewController.m */,
 			);
 			name = "Previous Orders";
 			sourceTree = "<group>";
@@ -413,6 +433,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57F0493919B1266E00E0C6E2 /* CheckoutViewController.m in Sources */,
 				573C8EF919A6B242002B4D52 /* GuessMyOrderTableViewController.m in Sources */,
 				57A7A92E19A59C9600437F4C /* AppDelegate.m in Sources */,
 				57BECF9219A92492001BCA94 /* StoreCartViewController.m in Sources */,
@@ -428,10 +449,13 @@
 				57A7A97519A5AF7A00437F4C /* CouponsViewController.m in Sources */,
 				573C8F0219A6E663002B4D52 /* FoodDetailViewController.m in Sources */,
 				5713662219A84501009FCE14 /* cartItem.m in Sources */,
+				57E9AF7F19AFC184008C8F77 /* CartTableViewCell.m in Sources */,
 				57A7A96919A5A7BF00437F4C /* SideBarTableViewController.m in Sources */,
+				57F0493C19B12AE300E0C6E2 /* PreviousOrdersDetailViewController.m in Sources */,
 				57A7A95E19A59EEA00437F4C /* CustomViewController.m in Sources */,
 				573C8EFF19A6E0C1002B4D52 /* FoodViewController.m in Sources */,
 				573C8EFC19A6CDA5002B4D52 /* foodCategoryViewController.m in Sources */,
+				57F0493319B1253900E0C6E2 /* ReplaceViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

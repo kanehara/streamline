@@ -8,14 +8,18 @@
 
 #import <UIKit/UIKit.h>
 #import "myCarts.h"
+#import "CartTableViewCell.h"
 
 @interface StoreCartViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
     myCarts *_myCartsInstance;
+    float total;
 }
 
 @property (nonatomic) IBOutlet UITableView *tableView;
 
 @property (nonatomic) IBOutlet UILabel *totalLabel;
+
+@property (nonatomic, weak) IBOutlet UIView *buttonCover;
 
 @property (nonatomic) UIBarButtonItem *editButon;
 

@@ -8,6 +8,10 @@
 
 #import "CustomViewController.h"
 
-@interface PreviousOrdersViewController : CustomViewController
+@interface PreviousOrdersViewController : CustomViewController <UITableViewDataSource, UITableViewDelegate>
+
+@property (nonatomic, weak) IBOutlet UITableView *tableView;
+
+@property (nonatomic, strong) NSMutableArray *previousOrdersArray;
 
 @end

@@ -10,6 +10,7 @@
 #import "myCarts.h"
 #import "cartItem.h"
 #import "foodItem.h"
+#import "StoreCartViewController.h"
 
 @interface FoodDetailViewController ()
 
@@ -113,9 +114,17 @@
 - (void) textFieldDidBeginEditing:(UITextField *)textField {
     [self.pickerView setHidden:NO];
 }
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    StoreCartViewController *dest = (StoreCartViewController*)segue.destinationViewController;
+    dest.store = _store;
+}
+
 - (IBAction)onAddToCartPress:(id)sender {
     myCarts *carts = [myCarts getInstance];
     [carts addCartItem:self.foodDetailCartItem toStore:self.store];
+    
+    [self performSegueWithIdentifier:@"addToCartSegue" sender:self];
 }
 
 @end

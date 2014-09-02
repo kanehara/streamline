@@ -21,8 +21,6 @@
     [super viewDidLoad];
     
     [self initFoodCategory];
-    
-    [self.view setBackgroundColor:[UIColor colorWithRed:0 green:.24 blue:.48 alpha:1]];
 }
 
 - (void) initFoodCategory {
