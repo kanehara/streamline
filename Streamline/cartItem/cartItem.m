@@ -37,8 +37,8 @@
         _cartItemTotalCost = item.cartItemTotalCost;
         _cartItemFoodItem = [[foodItem alloc] initWithName:item.cartItemFoodItem.foodItemName
                                                  withPrice:item.cartItemFoodItem.foodItemPrice
-                                              withCategory:item.cartItemFoodItem.foodItemCategory];
-        [_cartItemFoodItem setFoodID:item.cartItemFoodItem.foodID];
+                                              withCategory:item.cartItemFoodItem.foodItemCategory
+                                                withFoodID:item.cartItemFoodItem.foodID];
     }
     return self;
 }
@@ -47,7 +47,10 @@
     self = [super init];
     
     if (self) {
-        _cartItemFoodItem = [[foodItem alloc] initWithName:item.foodItemName withPrice:item.foodItemPrice withCategory:item.foodItemCategory];
+        _cartItemFoodItem = [[foodItem alloc] initWithName:item.foodItemName
+                                                 withPrice:item.foodItemPrice
+                                              withCategory:item.foodItemCategory
+                                                withFoodID:item.foodID];
         _cartItemQuantity = 0;
     }
     

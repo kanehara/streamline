@@ -26,12 +26,13 @@
     return self;
 }
 
-- (id)initWithName:(NSString *)name withPrice:(float)price withCategory:(NSString *)category {
+- (id)initWithName:(NSString *)name withPrice:(float)price withCategory:(NSString *)category withFoodID:(NSString *)foodID {
     self = [super init];
     
     _foodItemName = name;
     _foodItemPrice = price;
     _foodItemCategory = category;
+    _foodID = foodID;
     
     return self;
 }

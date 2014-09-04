@@ -17,6 +17,7 @@
 
 - (id)initWithName:(NSString*)name
          withPrice:(float)price
-      withCategory:(NSString*)category;
+      withCategory:(NSString*)category
+        withFoodID:(NSString*)foodID;
 
 @end

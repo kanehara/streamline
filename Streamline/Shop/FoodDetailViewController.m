@@ -60,13 +60,15 @@
 // ------------------------------DUMMY DATA INIT START-------------------------------------------
 - (void)initDummyData {
     float quantity = [self.quantityField.text floatValue];
-    foodItem *item = [[foodItem alloc] initWithName:@"Avocado" withPrice:2.60 withCategory:@"Produce"];
+    foodItem *item = [[foodItem alloc] initWithName:@"Avocado"
+                                          withPrice:2.60
+                                       withCategory:@"Produce"
+                                         withFoodID:@"Avocado123"];
     
     [self setTitle:@"Avocado"];
     
     _foodDetailCartItem = [[cartItem alloc] initWithFoodItem:item withQuantity:quantity];
-    [_foodDetailCartItem.cartItemFoodItem setFoodID:@"Avocado123"];
-
+    
     _store = @"Hiller's on Troy Rd";
 }
 

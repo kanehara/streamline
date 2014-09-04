@@ -13,6 +13,7 @@
 @interface StoreCartViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
     myCarts *_myCartsInstance;
     float total;
+    NSIndexPath *indexPathForReplacement;
 }
 
 @property (nonatomic) IBOutlet UITableView *tableView;

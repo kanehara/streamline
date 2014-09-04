@@ -11,6 +11,7 @@
 #import "cartItem.h"
 #import "CartTableViewCell.h"
 #import "CheckoutViewController.h"
+#import "ReplaceViewController.h"
 
 @interface StoreCartViewController () <CartTableViewCellDelegate>
 
@@ -137,6 +138,14 @@
 }
 
 - (void)replaceButtonActionForItem:(NSString *)item {
+    NSArray *visibleCells = [self.tableView visibleCells];
+    NSArray *visibleCellsIndexPaths = [self.tableView indexPathsForVisibleRows];
+    for (int i = 0; i < visibleCells.count; ++i) {
+        CartTableViewCell *cell = (CartTableViewCell*)visibleCells[i];
+        if (cell.foodName == item) {
+            indexPathForReplacement = visibleCellsIndexPaths[i];
+        }
+    }
     [self performSegueWithIdentifier:@"replaceSegue"
                               sender:self];
 }
@@ -151,7 +160,9 @@
         dest.store = self.store;
     }
     else if ([segue.identifier isEqualToString:@"replaceSegue"]) {
-        
+        ReplaceViewController *dest = (ReplaceViewController*)segue.destinationViewController;
+        dest.store = self.store;
+        dest.indexPathForReplacement = indexPathForReplacement;
     }
     else {
         NSLog(@"Error in prepareForSegue in StoreCartVC");
