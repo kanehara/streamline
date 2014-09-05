@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "myCarts.h"
-#import "CartTableViewCell.h"
 
 @interface StoreCartViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
     myCarts *_myCartsInstance;

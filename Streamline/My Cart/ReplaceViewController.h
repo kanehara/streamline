@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "cartItem.h"
+#import "myCarts.h"
 
 @interface ReplaceViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate> {
     NSArray *_sections;
@@ -16,6 +17,8 @@
     UITextField *_quantityFieldBeingEdited;
     
     cartItem *replaceCartItem;
+    
+    myCarts *_myCartsInstance;
 }
 
 @property (nonatomic, weak) IBOutlet UITableView *tableView;

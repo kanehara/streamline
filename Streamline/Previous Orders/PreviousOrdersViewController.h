@@ -12,6 +12,6 @@
 
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
 
-@property (nonatomic, strong) NSMutableArray *previousOrdersArray;
+@property (nonatomic, strong) NSArray *previousOrdersArray;
 
 @end

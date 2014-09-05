@@ -262,31 +262,31 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="replaceCell" rowHeight="110" id="xCc-Jw-bkU">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="replaceCell" rowHeight="110" id="xCc-Jw-bkU" customClass="ReplaceTableViewCell">
                                         <rect key="frame" x="0.0" y="22" width="320" height="110"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xCc-Jw-bkU" id="Id6-td-IHg">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="109"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yWx-hr-Gkq">
+                                                <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yWx-hr-Gkq">
                                                     <rect key="frame" x="220" y="5" width="80" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Add to Cart">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="onAddToCartPress:" destination="iab-aY-4dU" eventType="touchUpInside" id="JyO-cL-CYd"/>
+                                                        <action selector="buttonClicked:" destination="xCc-Jw-bkU" eventType="touchUpInside" id="QHs-Ye-LfH"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eon-1A-BG0">
+                                                <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eon-1A-BG0">
                                                     <rect key="frame" x="244" y="67" width="56" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Replace">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="onReplaceItemPress:" destination="iab-aY-4dU" eventType="touchUpInside" id="6OM-aK-6ev"/>
+                                                        <action selector="buttonClicked:" destination="xCc-Jw-bkU" eventType="touchUpInside" id="FQF-z0-eIa"/>
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Food Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q3a-Jv-a7t">
@@ -308,11 +308,18 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
-                                                        <outlet property="delegate" destination="iab-aY-4dU" id="s7H-oa-P3K"/>
+                                                        <outlet property="delegate" destination="iab-aY-4dU" id="nBr-En-gQW"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="addToCartButton" destination="yWx-hr-Gkq" id="pxj-my-ZkA"/>
+                                            <outlet property="foodNameLabel" destination="q3a-Jv-a7t" id="3uQ-yj-Zar"/>
+                                            <outlet property="priceLabel" destination="GnK-TJ-qik" id="rK9-nf-NNM"/>
+                                            <outlet property="quantityField" destination="kBW-Y0-BOb" id="k2I-ic-Vxd"/>
+                                            <outlet property="replaceButton" destination="Eon-1A-BG0" id="ZnO-qS-z06"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -392,13 +399,16 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="previousOrdersCell" id="f7G-mI-rqk">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="previousOrdersCell" id="f7G-mI-rqk">
                                         <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="f7G-mI-rqk" id="RRd-pF-je0">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="iCz-Dt-aZM" kind="push" id="adL-X2-fGw"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -412,7 +422,6 @@
                     <navigationItem key="navigationItem" id="x2S-n2-3ai"/>
                     <connections>
                         <outlet property="tableView" destination="RHZ-YX-xxJ" id="uum-HC-eQT"/>
-                        <segue destination="iCz-Dt-aZM" kind="push" identifier="previousOrdersDetailSegue" id="9tM-sQ-419"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XQH-nI-eLh" userLabel="First Responder" sceneMemberID="firstResponder"/>

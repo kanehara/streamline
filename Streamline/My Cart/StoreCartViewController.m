@@ -115,6 +115,10 @@
         NSMutableArray *storeCart = [_myCartsInstance.storeCartDictionary objectForKey:_store];
         [storeCart removeObjectAtIndex:indexPath.row];
         [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        CartTableViewCell *cell = (CartTableViewCell*)[self.tableView cellForRowAtIndexPath:indexPath];
+        NSArray *itemSubtotalComponents = [cell.subtotalLabel.text componentsSeparatedByString:@"$"];
+        float itemSubtotal = -[[itemSubtotalComponents lastObject] floatValue];
+        [self updateTotalLabel:itemSubtotal];
     }
     else {
         NSLog(@"Unhandled deletion of cell");
@@ -130,9 +134,6 @@
             [self tableView:self.tableView
          commitEditingStyle:UITableViewCellEditingStyleDelete
           forRowAtIndexPath:visibleCellsIndexPaths[i]];
-            NSArray *itemSubtotalComponents = [cell.subtotalLabel.text componentsSeparatedByString:@"$"];
-            float itemSubtotal = -[[itemSubtotalComponents lastObject] floatValue];
-            [self updateTotalLabel:itemSubtotal];
         }
     }
 }
@@ -151,6 +152,7 @@
 }
 
 - (IBAction)onCheckoutButtonPress:(id)sender {
+    
     
 }
 

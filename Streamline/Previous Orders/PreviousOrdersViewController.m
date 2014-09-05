@@ -19,15 +19,15 @@
     [super viewDidLoad];
 
     [self initDummyData];
+    
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 }
 
 - (void)initDummyData {
-    NSArray *tempArray = [[NSArray alloc] initWithObjects:@"Hiller's on Troy",
+    self.previousOrdersArray = @[@"Hiller's on Troy",
                           @"Whole Foods on Rochester",
                           @"Hiller's on Main",
-                          @"Farmer Jack on Industry", nil];
-    
-    [self.previousOrdersArray addObjectsFromArray:tempArray];
+                          @"Farmer Jack on Industry"];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

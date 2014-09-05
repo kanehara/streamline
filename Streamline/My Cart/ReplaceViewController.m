@@ -8,8 +8,9 @@
 
 #import "ReplaceViewController.h"
 #import "foodItem.h"
+#import "ReplaceTableViewCell.h"
 
-@interface ReplaceViewController ()
+@interface ReplaceViewController () <ReplaceTableViewCellDelegate>
 
 @end
 
@@ -27,6 +28,8 @@
     [self initSections];
     
     [self initPickerView];
+    
+    _myCartsInstance = [myCarts getInstance];
 }
 
 // ---------------------------DUMMY DATA INIT BEGIN-----------------------------------------
@@ -166,11 +169,7 @@
 }
 
 - (UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"replaceCell" forIndexPath:indexPath];
-    
-    UILabel *nameLabel = (UILabel*)[cell viewWithTag:1];
-    UILabel *priceLabel = (UILabel*)[cell viewWithTag:2];
-    UITextField *quantityField = (UITextField*)[cell viewWithTag:3];
+    ReplaceTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"replaceCell" forIndexPath:indexPath];
     
     foodItem *item;
     
@@ -193,9 +192,12 @@
             break;
     }
     
-    nameLabel.text = item.foodItemName;
-    priceLabel.text = [NSString stringWithFormat:@"$%.02f", item.foodItemPrice];
-    quantityField.inputView = self.pickerView;
+    cell.foodNameLabel.text = item.foodItemName;
+    cell.priceLabel.text = [NSString stringWithFormat:@"$%.02f", item.foodItemPrice];
+    cell.quantityField.inputView = self.pickerView;
+    cell.cellIndexPath = indexPath;
+    
+    cell.delegate = self;
     
     return cell;
 }
@@ -221,38 +223,13 @@
     return 40;
 }
 
-- (IBAction)onReplaceItemPress:(id)sender {
-    UIButton *button = (UIButton*)sender;
-    NSIndexPath *pathForNewItem = [self.tableView indexPathForCell:(UITableViewCell*)button.superview];
+- (void)addToCartButtonActionForIndexPath:(NSIndexPath *)indexPath {
+    ReplaceTableViewCell *cell = (ReplaceTableViewCell*)[self.tableView cellForRowAtIndexPath:indexPath];
+    [self performSegueWithIdentifier:@"replaceAddToCartSegue" sender:self];
     
-    foodItem *replaceFoodItem;
-    
-    switch (pathForNewItem.section) {
-        case 0:
-            replaceFoodItem = (foodItem*)self.priceFoodItems[pathForNewItem.row];
-            break;
-        case 1:
-            replaceFoodItem = (foodItem*)self.organicFoodItems[pathForNewItem.row];
-            break;
-        case 2:
-            replaceFoodItem = (foodItem*)self.glutenFreeFoodItems[pathForNewItem.row];
-            break;
-        case 3:
-            replaceFoodItem = (foodItem*)self.popularFoodItems[pathForNewItem.row];
-            break;
-        default:
-            NSLog(@"Error in onReplaceItemPress in ReplaceViewController.m");
-            break;
-    }
-    
-    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:pathForNewItem];
-    UITextField *quantityField = (UITextField*)[cell viewWithTag:3];
-    float quantity = [quantityField.text floatValue];
-    
-    replaceCartItem = [[cartItem alloc] initWithFoodItem:replaceFoodItem withQuantity:quantity];
 }
 
-- (IBAction)onAddToCartPress:(id)sender {
+- (void)replaceButtonActionForIndexPath:(NSIndexPath *)indexPath {
     
 }
 
