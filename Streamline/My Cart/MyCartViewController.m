@@ -21,8 +21,7 @@
     [super viewDidLoad];
     
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
-    
-    [self.noCartsLabel setHidden:YES];
+
 
 }
 

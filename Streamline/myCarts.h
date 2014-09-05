@@ -26,6 +26,7 @@
 - (NSString*)storeAtIndex:(NSIndexPath*)indexPath;
 - (cartItem*)itemAtIndex:(NSIndexPath*)indexPath forStore:(NSString*)store;
 - (void)addCartItem:(cartItem*)newCartItem toStore:(NSString*)store;
+- (void)removeCartItemAtIndex:(NSUInteger)index fromStore:(NSString*)store;
 
 @end
 

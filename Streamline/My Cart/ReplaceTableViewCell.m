@@ -12,10 +12,10 @@
 
 - (IBAction)buttonClicked:(id)sender {
     if (sender == self.addToCartButton) {
-        [self.delegate addToCartButtonActionForIndexPath:self.cellIndexPath];
+        [self.delegate buttonActionForIndexPath:self.cellIndexPath isReplace:NO];
     }
     else if (sender == self.replaceButton) {
-        [self.delegate replaceButtonActionForIndexPath:self.cellIndexPath];
+        [self.delegate buttonActionForIndexPath:self.cellIndexPath isReplace:YES];
     }
     else {
         NSLog(@"Invalid sender for action buttonClicked in ReplaceTableViewCell.m");

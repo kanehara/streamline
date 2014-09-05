@@ -223,14 +223,40 @@
     return 40;
 }
 
-- (void)addToCartButtonActionForIndexPath:(NSIndexPath *)indexPath {
+- (void)buttonActionForIndexPath:(NSIndexPath *)indexPath isReplace:(BOOL)replace {
     ReplaceTableViewCell *cell = (ReplaceTableViewCell*)[self.tableView cellForRowAtIndexPath:indexPath];
-    [self performSegueWithIdentifier:@"replaceAddToCartSegue" sender:self];
     
-}
-
-- (void)replaceButtonActionForIndexPath:(NSIndexPath *)indexPath {
+    foodItem *item;
     
+    switch (indexPath.section) {
+        case 0:
+            item = (foodItem*)self.priceFoodItems[indexPath.row];
+            break;
+        case 1:
+            item = (foodItem*)self.organicFoodItems[indexPath.row];
+            break;
+        case 2:
+            item = (foodItem*)self.glutenFreeFoodItems[indexPath.row];
+            break;
+        case 3:
+            item = (foodItem*)self.popularFoodItems[indexPath.row];
+            break;
+        default:
+            NSLog(@"Error in addToCartButtonActionForIndexPath in ReplaceViewController.m");
+            break;
+    }
+    
+    float quantity = [cell.quantityField.text floatValue];
+    
+    self.replaceCartItem = [[cartItem alloc] initWithFoodItem:item withQuantity:quantity];
+    
+    if (replace) {
+        [_myCartsInstance removeCartItemAtIndex:self.indexPathForReplacement.row
+                                      fromStore:self.store];
+    }
+    
+    [_myCartsInstance addCartItem:self.replaceCartItem toStore:self.store];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

@@ -15,9 +15,7 @@
     NSArray *_pickerViewSelection;
     
     UITextField *_quantityFieldBeingEdited;
-    
-    cartItem *replaceCartItem;
-    
+        
     myCarts *_myCartsInstance;
 }
 
@@ -30,6 +28,8 @@
 
 @property (nonatomic) NSString *store;
 @property (nonatomic) NSIndexPath *indexPathForReplacement;
+
+@property (nonatomic, strong) cartItem *replaceCartItem;
 
 @property (nonatomic, strong) UIPickerView *pickerView;
 

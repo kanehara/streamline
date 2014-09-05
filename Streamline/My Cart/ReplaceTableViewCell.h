@@ -9,8 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @protocol ReplaceTableViewCellDelegate <NSObject>
-- (void)replaceButtonActionForIndexPath:(NSIndexPath*)indexPath;
-- (void)addToCartButtonActionForIndexPath:(NSIndexPath*)indexPath;
+- (void)buttonActionForIndexPath:(NSIndexPath*)indexPath isReplace:(BOOL)replace;
 @end
 
 @interface ReplaceTableViewCell : UITableViewCell

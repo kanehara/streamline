@@ -76,9 +76,15 @@
                 [_storeCartDictionary setObject:cart forKey:store];
                 return;
             }
+            else {
+                // case when food item is not in cart
+                cartItem *newItem = [[cartItem alloc] initWithCartItem:newCartItem];
+                [cart addObject:newItem];
+                return;
+            }
         }
     }
-    // case when item is not in cart
+    // case when cart at store is not open
     cartItem *brandNewCartItem = [[cartItem alloc] initWithCartItem:newCartItem];
     NSMutableArray *newCart = [[NSMutableArray alloc] initWithObjects:brandNewCartItem, nil];
     
@@ -86,7 +92,15 @@
     
 }
 
-
+- (void)removeCartItemAtIndex:(NSUInteger)index fromStore:(NSString *)store {
+    NSMutableArray *cart = [_storeCartDictionary objectForKey:store];
+    if (cart) {
+        [cart removeObjectAtIndex:index];
+    }
+    else {
+        NSLog(@"Cart does not exist");
+    }
+}
 
 
 @end

@@ -35,6 +35,11 @@
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:YES];
+    [self.tableView reloadData];
+}
+
 - (void)initMyCartsInstance {
     _myCartsInstance = [myCarts getInstance];
 }
@@ -42,7 +47,7 @@
 - (void)initEditButton {
     _editButton = [[UIBarButtonItem alloc] initWithTitle:@"Edit"
                                                    style:UIBarButtonItemStylePlain target:self
-                                                  action:@selector(enableEditingOfTableView)];
+                                                  action:@selector(toggleEditingOfTableView)];
     self.navigationItem.rightBarButtonItem = _editButton;
     
     [self.buttonCover setHidden:NO];
@@ -63,7 +68,7 @@
     self.totalLabel.text = [NSString stringWithFormat:@"$%.02f", total];
 }
 
-- (void)enableEditingOfTableView {
+- (void)toggleEditingOfTableView {
     if ([_editButton.title isEqualToString:@"Edit"]) {
         [self.buttonCover setHidden:YES];
         [_editButton setTitle:@"Done"];
@@ -104,6 +109,8 @@
     cell.subtotalLabel.text = [NSString stringWithFormat: @"Subtotal: $%.02f", cartItem.cartItemTotalCost];
     
     cell.quantityTextField.text = [[NSNumber numberWithFloat:cartItem.cartItemQuantity] stringValue];
+    
+    cell.foodName = cartItem.cartItemFoodItem.foodID;
     
     cell.delegate = self;
         
@@ -149,11 +156,12 @@
     }
     [self performSegueWithIdentifier:@"replaceSegue"
                               sender:self];
+    [self toggleEditingOfTableView];
 }
 
 - (IBAction)onCheckoutButtonPress:(id)sender {
     
-    
+    [self toggleEditingOfTableView];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

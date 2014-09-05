@@ -14,7 +14,5 @@
 
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
 
-@property (nonatomic, weak) IBOutlet UILabel *noCartsLabel;
-
 
 @end
