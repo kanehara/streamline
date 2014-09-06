@@ -15,7 +15,10 @@
 @property (nonatomic) float cartItemQuantity;
 @property (nonatomic) float cartItemTotalCost;
 
+// Adds 'quantity' to current quantity value
 - (void)addQuantity:(float)quantity;
+// Replaces current quantity value with new quantity value
+- (void)updateQuantity:(float)quantity;
 
 - (id)initWithCartItem:(cartItem*)item;
 

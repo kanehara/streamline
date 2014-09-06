@@ -32,7 +32,11 @@
     
     [self initTotalLabel];
     
+    [self initPickerView];
+    
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    
+    [self setTitle:_store];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -63,6 +67,52 @@
     self.totalLabel.text = [NSString stringWithFormat:@"$%.02f", total];
 }
 
+- (void)initPickerView {
+    self.pickerView = [[UIPickerView alloc] initWithFrame:self.pickerView.inputView.frame];
+    [self.pickerView setHidden:YES];
+    [self.pickerView setDataSource:self];
+    [self.pickerView setDelegate:self];
+    
+    // Set tap gesture recognizer
+    UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc]
+                                                    initWithTarget:self
+                                                    action:@selector(onQuantitySelection)];
+    [self.view addGestureRecognizer:tapGestureRecognizer];
+    
+    self.pickerViewOptions = @[@"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"10+"];
+
+}
+
+- (void)onQuantitySelection {
+    if (_textFieldBeingEdited) {
+        [_textFieldBeingEdited resignFirstResponder];
+    }
+}
+
+#pragma mark - pickerView methods
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    _textFieldBeingEdited.text = self.pickerViewOptions[row];
+}
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+    return 1;
+}
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    return self.pickerViewOptions.count;
+}
+-(NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    return self.pickerViewOptions[row];
+}
+
+#pragma mark - textField methods
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    [self.pickerView setHidden:NO];
+    _textFieldBeingEdited = textField;
+}
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    _textFieldBeingEdited = nil;
+}
+
+#pragma mark - own methods
 - (void)updateTotalLabel:(float)value {
     total += value;
     self.totalLabel.text = [NSString stringWithFormat:@"$%.02f", total];
@@ -79,6 +129,7 @@
     }
 }
 
+#pragma mark - table view methods
 - (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
@@ -109,29 +160,37 @@
     cell.subtotalLabel.text = [NSString stringWithFormat: @"Subtotal: $%.02f", cartItem.cartItemTotalCost];
     
     cell.quantityTextField.text = [[NSNumber numberWithFloat:cartItem.cartItemQuantity] stringValue];
+    cell.quantityTextField.inputView = self.pickerView;
+
     
     cell.foodName = cartItem.cartItemFoodItem.foodID;
     
     cell.delegate = self;
-        
+    
+    cell.cellIndexPath = indexPath;
+    
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        NSMutableArray *storeCart = [_myCartsInstance.storeCartDictionary objectForKey:_store];
-        [storeCart removeObjectAtIndex:indexPath.row];
-        [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        // Update total label
         CartTableViewCell *cell = (CartTableViewCell*)[self.tableView cellForRowAtIndexPath:indexPath];
         NSArray *itemSubtotalComponents = [cell.subtotalLabel.text componentsSeparatedByString:@"$"];
         float itemSubtotal = -[[itemSubtotalComponents lastObject] floatValue];
         [self updateTotalLabel:itemSubtotal];
+        
+        NSMutableArray *storeCart = [_myCartsInstance.storeCartDictionary objectForKey:_store];
+        [storeCart removeObjectAtIndex:indexPath.row];
+        [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
     else {
         NSLog(@"Unhandled deletion of cell");
     }
 }
 
+
+#pragma mark - storecartcell methods
 - (void)deleteButtonActionForItem:(NSString *)item {
     NSArray *visibleCells = [self.tableView visibleCells];
     NSArray *visibleCellsIndexPaths = [self.tableView indexPathsForVisibleRows];
@@ -159,9 +218,21 @@
     [self toggleEditingOfTableView];
 }
 
-- (IBAction)onCheckoutButtonPress:(id)sender {
+- (void)updateQuantityActionForIndexPath:(NSIndexPath *)indexPath withQuantity:(float)quantity {
+    NSMutableArray *cart = [_myCartsInstance.storeCartDictionary objectForKey:self.store];
+    cartItem *item = cart[indexPath.row];
     
-    [self toggleEditingOfTableView];
+    [item updateQuantity:quantity];
+    
+    [self.tableView reloadData];
+    [self initTotalLabel];
+}
+
+#pragma mark - ETC Methods
+- (IBAction)onCheckoutButtonPress:(id)sender {
+    if ([_editButton.title isEqualToString:@"Done"]){
+        [self toggleEditingOfTableView];
+    }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

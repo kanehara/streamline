@@ -9,10 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "myCarts.h"
 
-@interface StoreCartViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
+@interface StoreCartViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate> {
     myCarts *_myCartsInstance;
     float total;
     NSIndexPath *indexPathForReplacement;
+    
+    UITextField *_textFieldBeingEdited;
 }
 
 @property (nonatomic) IBOutlet UITableView *tableView;
@@ -20,6 +22,9 @@
 @property (nonatomic) IBOutlet UILabel *totalLabel;
 
 @property (nonatomic, weak) IBOutlet UIView *buttonCover;
+
+@property (nonatomic) UIPickerView *pickerView;
+@property (nonatomic) NSArray *pickerViewOptions;
 
 @property (nonatomic) UIBarButtonItem *editButon;
 

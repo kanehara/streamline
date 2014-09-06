@@ -64,4 +64,9 @@
     _cartItemTotalCost += quantity*_cartItemFoodItem.foodItemPrice;
 }
 
+- (void)updateQuantity:(float)quantity {
+    _cartItemQuantity = quantity;
+    _cartItemTotalCost = quantity*_cartItemFoodItem.foodItemPrice;
+}
+
 @end

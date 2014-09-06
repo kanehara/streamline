@@ -11,6 +11,7 @@
 @protocol CartTableViewCellDelegate <NSObject>
 - (void)deleteButtonActionForItem:(NSString*)item;
 - (void)replaceButtonActionForItem:(NSString*)item;
+- (void)updateQuantityActionForIndexPath:(NSIndexPath*)indexPath withQuantity:(float)quantity;
 @end
 
 @interface CartTableViewCell : UITableViewCell
@@ -23,6 +24,8 @@
 @property (nonatomic, weak) IBOutlet UITextField *quantityTextField;
 
 @property (nonatomic, strong) NSString *foodName;
+
+@property (nonatomic) NSIndexPath *cellIndexPath;
 
 @property (nonatomic, weak) id<CartTableViewCellDelegate> delegate;
 

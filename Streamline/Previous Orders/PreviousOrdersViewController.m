@@ -7,6 +7,7 @@
 //
 
 #import "PreviousOrdersViewController.h"
+#import "PreviousOrdersDetailViewController.h"
 
 @interface PreviousOrdersViewController ()
 
@@ -24,7 +25,7 @@
 }
 
 - (void)initDummyData {
-    self.previousOrdersArray = @[@"Hiller's on Troy",
+    self.stores = @[@"Hiller's on Troy",
                           @"Whole Foods on Rochester",
                           @"Hiller's on Main",
                           @"Farmer Jack on Industry"];
@@ -35,15 +36,27 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.previousOrdersArray.count;
+    return self.stores.count;
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"previousOrdersCell" forIndexPath:indexPath];
     
-    cell.textLabel.text = self.previousOrdersArray[indexPath.row];
+    cell.textLabel.text = self.stores[indexPath.row];
     
     return cell;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([sender isKindOfClass:[UITableViewCell class]]) {
+        UITableViewCell *cell = (UITableViewCell*)sender;
+        PreviousOrdersDetailViewController *dest = segue.destinationViewController;
+        dest.store = cell.textLabel.text;
+        dest.title = cell.textLabel.text;
+    }
+    else {
+        NSLog(@"Error in prepareForSegue in PreviousOrdersVC");
+    }
 }
 
 @end

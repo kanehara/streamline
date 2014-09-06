@@ -23,4 +23,11 @@
     }
 }
 
+- (IBAction)quantityUpdated:(id)sender {
+    if (sender == self.quantityTextField) {
+        [self.delegate updateQuantityActionForIndexPath:self.cellIndexPath
+                                           withQuantity:[self.quantityTextField.text floatValue]];
+    }
+}
+
 @end
