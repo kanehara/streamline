@@ -98,6 +98,7 @@
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     _textFieldBeingEdited.text = self.pickerViewOptions[row];
+    [self.cart[row] updateQuantity:[self.pickerViewOptions[row] floatValue]];
 }
 - (NSInteger) pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
     return self.pickerViewOptions.count;
@@ -154,7 +155,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 110;
+    return 80;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -162,6 +163,15 @@
         StoreCartViewController *dest = (StoreCartViewController*)segue.destinationViewController;
         dest.store = self.store;
     }
+}
+
+- (IBAction)onAddEntireOrderButtonPress:(id)sender {
+    for (int i = 0; i < self.cart.count; ++i) {
+        cartItem *itemToBeAdded = self.cart[i];
+        [_myCartsInstance addCartItem:itemToBeAdded toStore:self.store];
+    }
+    
+    [self performSegueWithIdentifier:@"cartSegue" sender:self];
 }
 
 @end

@@ -9,11 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "myCarts.h"
 
-@interface CheckoutViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface CheckoutViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
+    myCarts *_myCartsInstance;
+}
 
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
-
-@property (nonatomic, strong) myCarts *myCartsInstance;
+@property (nonatomic) IBOutlet UILabel *storeLabel;
+@property (nonatomic) IBOutlet UILabel *totalLabel;
 
 @property (nonatomic) NSString *store;
 

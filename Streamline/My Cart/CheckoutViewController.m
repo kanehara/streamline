@@ -7,21 +7,38 @@
 //
 
 #import "CheckoutViewController.h"
+#import "ComfirmationViewController.h"
+#import "CheckoutTableViewCell.h"
 
-@interface CheckoutViewController ()
+@interface CheckoutViewController () <ComfirmationViewControllerDelegate>
 
 @end
 
 @implementation CheckoutViewController
 
-@synthesize myCartsInstance = _myCartsInstance;
-@synthesize store = _store;
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
+    _myCartsInstance = [myCarts getInstance];
+    
+    [self setTitle:@"Checkout"];
+    
+    [self initTotalLabel];
+    
+    self.storeLabel.text = self.store;
+    
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+}
+
+- (void)initTotalLabel {
+    float total;
+    NSMutableArray *cart = [_myCartsInstance.storeCartDictionary objectForKey:_store];
+    for (int i = 0; i < cart.count; ++i) {
+        cartItem *item = cart[i];
+        total += item.cartItemTotalCost;
+    }
+    self.totalLabel.text = [NSString stringWithFormat:@"Total: $%.02f", total];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -33,14 +50,39 @@
 }
 
 - (UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"checkoutCell" forIndexPath:indexPath];
+    CheckoutTableViewCell *cell = (CheckoutTableViewCell*)[tableView dequeueReusableCellWithIdentifier:@"checkoutCell" forIndexPath:indexPath];
     
     NSMutableArray *cart = [_myCartsInstance.storeCartDictionary objectForKey:_store];
     cartItem *item = cart[indexPath.row];
     
-    cell.textLabel.text = [NSString stringWithFormat:@"%@ x %f = $%.02f", item.cartItemFoodItem.foodItemName, item.cartItemQuantity, item.cartItemTotalCost];
+    cell.itemLabel.text = [NSString stringWithFormat:@"%@ x %0.f", item.cartItemFoodItem.foodItemName, item.cartItemQuantity];
+    
+    cell.subtotalLabel.text = [NSString stringWithFormat:@"$%.02f", item.cartItemTotalCost];
     
     return cell;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"confirmationSegue"]) {
+        ComfirmationViewController *dest = segue.destinationViewController;
+        dest.delegate = self;
+    }
+    else {
+        NSLog(@"Invalid sender in preparing for segue in CheckoutViewController");
+    }
+}
+
+- (IBAction)onSubmitOrderPress:(id)sender {
+    [_myCartsInstance.storeCartDictionary removeObjectForKey:_store];
+    [self performSegueWithIdentifier:@"confirmationSegue" sender:self];
+}
+
+#pragma mark - delegate method
+- (void)dismissAndPresentShopViewController {
+    [self dismissViewControllerAnimated:NO completion:^{
+        NSArray *controllers = [self.navigationController viewControllers];
+        [self.navigationController popToViewController:controllers[1] animated:YES];
+    }];
 }
 
 @end

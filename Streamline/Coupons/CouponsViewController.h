@@ -8,6 +8,10 @@
 
 #import "CustomViewController.h"
 
-@interface CouponsViewController : CustomViewController
+@interface CouponsViewController : CustomViewController <UITableViewDataSource, UITableViewDelegate>
+
+@property (nonatomic, weak) IBOutlet UITableView *tableView;
+
+@property (nonatomic) NSArray *coupons;
 
 @end

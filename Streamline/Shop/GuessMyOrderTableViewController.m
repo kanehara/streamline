@@ -28,14 +28,16 @@
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     
     // Initialize dummy data
-    [self initDummyFoodItems];
-    [self initDummyStoreLocations];
+    [self initDummyData];
+    
+    [self initStoreLabel];
+    [self initTotalLabel];
     
     // Initialize picker view
     [self initPickerView];
 }
 
-- (void) initDummyFoodItems {
+- (void) initDummyData {
     foodItem *item0 = [[foodItem alloc] initWithName:@"Milk"
                                            withPrice:2.80
                                         withCategory:@"Dairy"
@@ -52,18 +54,33 @@
                                            withPrice:1.85
                                         withCategory:@"Produce"
                                           withFoodID:@"RV Tom"];
-    foodItem *item4 = [[foodItem alloc] initWithName:@"Pepperridge Whole Wheat Bread"
+    foodItem *item4 = [[foodItem alloc] initWithName:@"Pepperridge Bread"
                                            withPrice:3.00
                                         withCategory:@"Bakery"
                                           withFoodID:@"PPWWBread"];
     
-    self.foodItems = @[item0, item1, item2, item3, item4];
+    cartItem *cartItem0 = [[cartItem alloc] initWithFoodItem:item0 withQuantity:2];
+    cartItem *cartItem1 = [[cartItem alloc] initWithFoodItem:item1 withQuantity:2];
+    cartItem *cartItem2 = [[cartItem alloc] initWithFoodItem:item2 withQuantity:1];
+    cartItem *cartItem3 = [[cartItem alloc] initWithFoodItem:item3 withQuantity:4];
+    cartItem *cartItem4 = [[cartItem alloc] initWithFoodItem:item4 withQuantity:1];
+    
+    self.cart = @[cartItem0, cartItem1, cartItem2, cartItem3, cartItem4];
+    
+    self.store = @"Trader Joe's on Stadium Dr";
 }
 
-- (void)initDummyStoreLocations {
-    self.storeLocations = @[@"Hiller's on Troy",
-                            @"Meijer on Grand Ave.",
-                            @"Trader Joe's on Main St."];
+- (void)initStoreLabel {
+    self.storeLabel.text = self.store;
+}
+
+- (void)initTotalLabel {
+    float total = 0;
+    for (int i = 0; i < self.cart.count; ++i) {
+        cartItem *item = (cartItem*)self.cart[i];
+        total += item.cartItemTotalCost;
+    }
+    self.totalLabel.text = [NSString stringWithFormat:@"Total: $%.02f", total];
 }
 
 - (void)initPickerView {
@@ -99,34 +116,22 @@
 #pragma mark - ReplaceTableViewCellDelegate
 // Reusing the ReplaceTableViewCell class to implement  GuessMyOrder cells
 - (void)buttonActionForIndexPath:(NSIndexPath *)indexPath isReplace:(BOOL)replace {
-    ReplaceTableViewCell *cell = (ReplaceTableViewCell*)[self.tableView cellForRowAtIndexPath:indexPath];
-    
-    float quantity = [cell.quantityField.text floatValue];
-    foodItem *item = self.foodItems[indexPath.row];
-    
-    self.cartItemToAdd = [[cartItem alloc] initWithFoodItem:item withQuantity:quantity];
-    
-    _store = self.storeLocations[indexPath.section];
-    
-    [_myCartsInstance addCartItem:self.cartItemToAdd toStore:self.storeLocations[indexPath.section]];
+        
+    [_myCartsInstance addCartItem:self.cart[indexPath.row] toStore:self.store];
     [self performSegueWithIdentifier:@"cartSegue" sender:self];
-
+    
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return self.storeLocations.count;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.foodItems.count;
-}
-
-- (NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return self.storeLocations[section];
+    return self.cart.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -134,12 +139,12 @@
     ReplaceTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"guessMyOrderCell" forIndexPath:indexPath];
     
     // Configure the cell...
-    foodItem *item = self.foodItems[indexPath.row];
+    cartItem *item = self.cart[indexPath.row];
     
     cell.cellIndexPath = indexPath;
-    cell.foodNameLabel.text = item.foodItemName;
-    cell.priceLabel.text = [NSString stringWithFormat:@"$%.02f", item.foodItemPrice];
-    cell.quantityField.text = @"0";
+    cell.foodNameLabel.text = item.cartItemFoodItem.foodItemName;
+    cell.priceLabel.text = [NSString stringWithFormat:@"$%.02f", item.cartItemFoodItem.foodItemPrice];
+    cell.quantityField.text = [NSString stringWithFormat:@"%0.f", item.cartItemQuantity];
     
     cell.delegate = self;
     
@@ -149,7 +154,7 @@
 }
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 110;
+    return 75;
 }
 
 #pragma mark - Beginning of picker view methods
@@ -178,6 +183,15 @@
     else {
         NSLog(@"Invalid segue in GuessMyOrderVC");
     }
+}
+
+- (IBAction)onAddEntireOrderButtonPress:(id)sender {
+    for (int i = 0; i < self.cart.count; ++i) {
+        cartItem *itemToBeAdded = self.cart[i];
+        [_myCartsInstance addCartItem:itemToBeAdded toStore:self.store];
+    }
+    
+    [self performSegueWithIdentifier:@"cartSegue" sender:self];
 }
 
 @end

@@ -39,12 +39,12 @@
                 @"My Carts",
                 @"Previous Orders",
                 @"Coupons",
-                @"Profile",];
+                @"Logout",];
     segues = @[@"shopSegue",
                @"myCartSegue",
                @"previousOrdersSegue",
                @"couponsSegue",
-               @"profileSegue"];
+               @"logoutSegue"];
     
     [self setSideBarOptions:options];
     [self setSideBarSegues:segues];

@@ -36,8 +36,11 @@
 		57A7A96D19A5AEF600437F4C /* MyCartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A7A96C19A5AEF600437F4C /* MyCartViewController.m */; };
 		57A7A97119A5AF3E00437F4C /* PreviousOrdersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A7A97019A5AF3E00437F4C /* PreviousOrdersViewController.m */; };
 		57A7A97519A5AF7A00437F4C /* CouponsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A7A97419A5AF7A00437F4C /* CouponsViewController.m */; };
-		57A7A97819A5AF8700437F4C /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A7A97719A5AF8700437F4C /* ProfileViewController.m */; };
 		57A7A97D19A5B82E00437F4C /* StoresNearbyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A7A97C19A5B82E00437F4C /* StoresNearbyTableViewController.m */; };
+		57AFB50919BBA0EC00379C7A /* ComfirmationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57AFB50819BBA0EC00379C7A /* ComfirmationViewController.m */; };
+		57AFB50C19BBAC3700379C7A /* CheckoutTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 57AFB50B19BBAC3700379C7A /* CheckoutTableViewCell.m */; };
+		57AFB50F19BBAF6800379C7A /* coupon.m in Sources */ = {isa = PBXBuildFile; fileRef = 57AFB50E19BBAF6800379C7A /* coupon.m */; };
+		57AFB51319BBB65600379C7A /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57AFB51219BBB65600379C7A /* LoginViewController.m */; };
 		57BECF9219A92492001BCA94 /* StoreCartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57BECF9119A92492001BCA94 /* StoreCartViewController.m */; };
 		57E9AF7F19AFC184008C8F77 /* CartTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E9AF7E19AFC184008C8F77 /* CartTableViewCell.m */; };
 		57F0493319B1253900E0C6E2 /* ReplaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F0493219B1253900E0C6E2 /* ReplaceViewController.m */; };
@@ -104,10 +107,16 @@
 		57A7A97019A5AF3E00437F4C /* PreviousOrdersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PreviousOrdersViewController.m; path = "Previous Orders/PreviousOrdersViewController.m"; sourceTree = "<group>"; };
 		57A7A97319A5AF7A00437F4C /* CouponsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CouponsViewController.h; path = Coupons/CouponsViewController.h; sourceTree = "<group>"; };
 		57A7A97419A5AF7A00437F4C /* CouponsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CouponsViewController.m; path = Coupons/CouponsViewController.m; sourceTree = "<group>"; };
-		57A7A97619A5AF8700437F4C /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProfileViewController.h; path = Profile/ProfileViewController.h; sourceTree = "<group>"; };
-		57A7A97719A5AF8700437F4C /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProfileViewController.m; path = Profile/ProfileViewController.m; sourceTree = "<group>"; };
 		57A7A97B19A5B82E00437F4C /* StoresNearbyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StoresNearbyTableViewController.h; path = Shop/StoresNearbyTableViewController.h; sourceTree = "<group>"; };
 		57A7A97C19A5B82E00437F4C /* StoresNearbyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StoresNearbyTableViewController.m; path = Shop/StoresNearbyTableViewController.m; sourceTree = "<group>"; };
+		57AFB50719BBA0EC00379C7A /* ComfirmationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ComfirmationViewController.h; path = "My Cart/ComfirmationViewController.h"; sourceTree = "<group>"; };
+		57AFB50819BBA0EC00379C7A /* ComfirmationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ComfirmationViewController.m; path = "My Cart/ComfirmationViewController.m"; sourceTree = "<group>"; };
+		57AFB50A19BBAC3700379C7A /* CheckoutTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CheckoutTableViewCell.h; path = "My Cart/CheckoutTableViewCell.h"; sourceTree = "<group>"; };
+		57AFB50B19BBAC3700379C7A /* CheckoutTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CheckoutTableViewCell.m; path = "My Cart/CheckoutTableViewCell.m"; sourceTree = "<group>"; };
+		57AFB50D19BBAF6800379C7A /* coupon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = coupon.h; sourceTree = "<group>"; };
+		57AFB50E19BBAF6800379C7A /* coupon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = coupon.m; sourceTree = "<group>"; };
+		57AFB51119BBB65600379C7A /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		57AFB51219BBB65600379C7A /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		57BECF9019A92492001BCA94 /* StoreCartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StoreCartViewController.h; path = "My Cart/StoreCartViewController.h"; sourceTree = "<group>"; };
 		57BECF9119A92492001BCA94 /* StoreCartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StoreCartViewController.m; path = "My Cart/StoreCartViewController.m"; sourceTree = "<group>"; };
 		57E9AF7D19AFC184008C8F77 /* CartTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CartTableViewCell.h; path = "My Cart/CartTableViewCell.h"; sourceTree = "<group>"; };
@@ -196,6 +205,8 @@
 			isa = PBXGroup;
 			children = (
 				57A7A93819A59C9600437F4C /* Main.storyboard */,
+				57AFB51419BBB66400379C7A /* LoginViewController */,
+				57AFB51019BBAF6D00379C7A /* coupon */,
 				5713662719A84FA5009FCE14 /* foodItem */,
 				5713662319A84507009FCE14 /* cartItem */,
 				57A7A95B19A59E4C00437F4C /* SWRevealViewController */,
@@ -205,7 +216,6 @@
 				57A7A96E19A5AF0D00437F4C /* My Cart */,
 				57A7A97219A5AF4800437F4C /* Previous Orders */,
 				57A7A97A19A5AF9700437F4C /* Coupons */,
-				57A7A97919A5AF9000437F4C /* Profile */,
 				57A7A92C19A59C9600437F4C /* AppDelegate.h */,
 				57A7A92D19A59C9600437F4C /* AppDelegate.m */,
 				57A7A93B19A59C9600437F4C /* Images.xcassets */,
@@ -307,6 +317,10 @@
 				5780F19919B8DA6400C6F518 /* ReplaceTableViewCell.m */,
 				57F0493719B1266E00E0C6E2 /* CheckoutViewController.h */,
 				57F0493819B1266E00E0C6E2 /* CheckoutViewController.m */,
+				57AFB50A19BBAC3700379C7A /* CheckoutTableViewCell.h */,
+				57AFB50B19BBAC3700379C7A /* CheckoutTableViewCell.m */,
+				57AFB50719BBA0EC00379C7A /* ComfirmationViewController.h */,
+				57AFB50819BBA0EC00379C7A /* ComfirmationViewController.m */,
 			);
 			name = "My Cart";
 			sourceTree = "<group>";
@@ -322,15 +336,6 @@
 			name = "Previous Orders";
 			sourceTree = "<group>";
 		};
-		57A7A97919A5AF9000437F4C /* Profile */ = {
-			isa = PBXGroup;
-			children = (
-				57A7A97619A5AF8700437F4C /* ProfileViewController.h */,
-				57A7A97719A5AF8700437F4C /* ProfileViewController.m */,
-			);
-			name = Profile;
-			sourceTree = "<group>";
-		};
 		57A7A97A19A5AF9700437F4C /* Coupons */ = {
 			isa = PBXGroup;
 			children = (
@@ -338,6 +343,24 @@
 				57A7A97419A5AF7A00437F4C /* CouponsViewController.m */,
 			);
 			name = Coupons;
+			sourceTree = "<group>";
+		};
+		57AFB51019BBAF6D00379C7A /* coupon */ = {
+			isa = PBXGroup;
+			children = (
+				57AFB50D19BBAF6800379C7A /* coupon.h */,
+				57AFB50E19BBAF6800379C7A /* coupon.m */,
+			);
+			name = coupon;
+			sourceTree = "<group>";
+		};
+		57AFB51419BBB66400379C7A /* LoginViewController */ = {
+			isa = PBXGroup;
+			children = (
+				57AFB51119BBB65600379C7A /* LoginViewController.h */,
+				57AFB51219BBB65600379C7A /* LoginViewController.m */,
+			);
+			name = LoginViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -443,16 +466,19 @@
 				573C8EF919A6B242002B4D52 /* GuessMyOrderTableViewController.m in Sources */,
 				57A7A92E19A59C9600437F4C /* AppDelegate.m in Sources */,
 				57BECF9219A92492001BCA94 /* StoreCartViewController.m in Sources */,
+				57AFB51319BBB65600379C7A /* LoginViewController.m in Sources */,
+				57AFB50C19BBAC3700379C7A /* CheckoutTableViewCell.m in Sources */,
 				57A7A92A19A59C9600437F4C /* main.m in Sources */,
 				57A7A96D19A5AEF600437F4C /* MyCartViewController.m in Sources */,
+				57AFB50F19BBAF6800379C7A /* coupon.m in Sources */,
 				57A7A97D19A5B82E00437F4C /* StoresNearbyTableViewController.m in Sources */,
 				57A7A95A19A59E4500437F4C /* SWRevealViewController.m in Sources */,
-				57A7A97819A5AF8700437F4C /* ProfileViewController.m in Sources */,
 				573E24B119A7BD010026B7D2 /* myCarts.m in Sources */,
 				5713662619A84F9E009FCE14 /* foodItem.m in Sources */,
 				57A7A97119A5AF3E00437F4C /* PreviousOrdersViewController.m in Sources */,
 				57A7A96619A59FF400437F4C /* ShopViewController.m in Sources */,
 				57A7A97519A5AF7A00437F4C /* CouponsViewController.m in Sources */,
+				57AFB50919BBA0EC00379C7A /* ComfirmationViewController.m in Sources */,
 				573C8F0219A6E663002B4D52 /* FoodDetailViewController.m in Sources */,
 				5713662219A84501009FCE14 /* cartItem.m in Sources */,
 				57E9AF7F19AFC184008C8F77 /* CartTableViewCell.m in Sources */,

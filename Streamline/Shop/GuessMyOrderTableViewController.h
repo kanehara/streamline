@@ -16,20 +16,17 @@
     UITextField *_textFieldBeingEdited;
     
     myCarts *_myCartsInstance;
-    
-    // Placeholder for the store to send to StoreCartViewController
-    NSString *_store;
 }
 
 @property (nonatomic, strong) IBOutlet UITableView *tableView;
+@property (nonatomic) IBOutlet UILabel *storeLabel;
+@property (nonatomic) IBOutlet UILabel *totalLabel;
 
 @property (nonatomic) UIPickerView *pickerView;
 @property (nonatomic) NSArray *pickerViewOptions;
 
 // Store GuessMyOrder foodItems and storeLocations here
-@property (nonatomic) NSArray *foodItems;
-@property (nonatomic) NSArray *storeLocations;
-
-@property (nonatomic) cartItem *cartItemToAdd;
+@property (nonatomic) NSArray *cart;
+@property (nonatomic) NSString *store;
 
 @end

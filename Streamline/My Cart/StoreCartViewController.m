@@ -233,6 +233,7 @@
     if ([_editButton.title isEqualToString:@"Done"]){
         [self toggleEditingOfTableView];
     }
+    [self performSegueWithIdentifier:@"checkoutSegue" sender:self];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
